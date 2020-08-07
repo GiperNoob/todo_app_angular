@@ -1,0 +1,21 @@
+<li>
+  <span
+    [ngClass]="{
+      complete: flagComplete,
+      notComplete: !flagComplete
+    }"
+    >{{ todo.text }}</span
+  >
+
+  <span>{{ todo.data }}</span>
+
+  <button
+    class="btn"
+    (click)="flagComplete = !flagComplete"
+    (click)="todoComplete()"
+  >
+    {{ buttonText }}
+  </button>
+
+  <button class="btn" (click)="removeTodo()">Delete</button>
+</li>
