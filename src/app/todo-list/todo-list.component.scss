@@ -1,8 +1,57 @@
 .complete {
-  border: 1px solid red;
+  border: 2px solid red;
+  border-radius: 4px;
 }
 
 .notComplete {
-  border: 1px solid green;
+  border: 2px solid green;
+  border-radius: 4px;
   text-decoration: line-through;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 800px;
+  min-width: 600px;
+}
+
+.btn-complete {
+  margin: 0px 5px;
+}
+
+.btn-complete,
+.btn-delete {
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  width: 115px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn-delete {
+  width: 70px;
+}
+
+.span-text {
+  margin-right: 10px;
+  display: inline-block;
+  width: 305px;
+  overflow: hidden;
+  max-height: 80px;
+  text-align: start;
+}
+
+.span-data {
+}
+
+.span-text,
+.span-data {
+  color: #ffffff;
 }

@@ -1,13 +1,25 @@
 <div class="container">
-  <app-add-form (onAdd)="addItem($event)"></app-add-form>
+  <div class="wrapper">
+    <header class="header">
+      <h1>Todo Application</h1>
+    </header>
+    <app-add-form (onAdd)="addItem($event)"></app-add-form>
 
-  <input type="text" [(ngModel)]="searchTodo" placeholder="search ToDo" />
+    <div>
+      <input
+        class="search-field"
+        type="text"
+        [(ngModel)]="searchTodo"
+        placeholder="search ToDo"
+      />
+    </div>
 
-  <ul>
-    <app-todo-list
-      *ngFor="let todo of todos | filter: searchTodo"
-      [todo]="todo"
-      (onRemove)="removeTodo($event)"
-    ></app-todo-list>
-  </ul>
+    <ul>
+      <app-todo-list
+        *ngFor="let todo of todos | filter: searchTodo"
+        [todo]="todo"
+        (onRemove)="removeTodo($event)"
+      ></app-todo-list>
+    </ul>
+  </div>
 </div>

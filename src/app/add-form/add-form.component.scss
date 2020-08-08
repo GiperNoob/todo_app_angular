@@ -1,0 +1,33 @@
+.form-container {
+  margin-bottom: 15px;
+}
+
+.input-text {
+  width: 200px;
+}
+
+.input-text,
+.input-date {
+  padding: 10px 0px 10px 10px;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px;
+  border-radius: 6px;
+  margin-left: 20px;
+  border: 2px solid yellowgreen;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 1px 1px 8px rgba(248, 246, 246);
+}
+
+button:active {
+  box-shadow: 4px 2px 8px rgba(228, 221, 221, 0.7);
+}
