@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 export interface ITodo {
   text: string;
@@ -10,22 +10,29 @@ export interface ITodo {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'todo';
 
   searchTodo = '';
 
-  todos: ITodo[] = [
-    { text: 'Create App', data: '01/01/2020', id: 1 },
+  todos: ITodo[] = [];
 
-    { text: 'Drink Coffee!!!', data: '01/01/2020', id: 2 },
-  ];
+  ngOnInit(): void {
+    if (JSON.parse(localStorage.getItem('savedToDos'))) {
+      this.todos = JSON.parse(localStorage.getItem('savedToDos'));
+    }
+  }
 
   addItem(todo: ITodo): void {
     this.todos.unshift(todo);
+    localStorage.clear();
+    localStorage.setItem('savedToDos', JSON.stringify(this.todos));
   }
 
   removeTodo(id: number): void {
     this.todos = this.todos.filter((todo) => todo.id !== id);
+    // localStorage.removeItem(id.toString());
+    localStorage.clear();
+    localStorage.setItem('savedToDos', JSON.stringify(this.todos));
   }
 }

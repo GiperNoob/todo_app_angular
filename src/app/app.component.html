@@ -3,16 +3,19 @@
     <header class="header">
       <h1>Todo Application</h1>
     </header>
-    <app-add-form (onAdd)="addItem($event)"></app-add-form>
 
-    <div>
-      <input
-        class="search-field"
-        type="text"
-        [(ngModel)]="searchTodo"
-        placeholder="search ToDo"
-      />
-    </div>
+    <section class="search-form">
+      <app-add-form (onAdd)="addItem($event)"></app-add-form>
+
+      <div>
+        <input
+          class="search-field"
+          type="text"
+          [(ngModel)]="searchTodo"
+          placeholder="search ToDo"
+        />
+      </div>
+    </section>
 
     <ul>
       <app-todo-list
