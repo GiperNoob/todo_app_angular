@@ -11,15 +11,14 @@ export interface ITodo {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  todos: ITodo[] = [];
+
   title = 'todo';
 
   searchTodoByText = '';
   searchTodoByDate = '';
 
-  todos: ITodo[] = [];
-
   reverseDateFlag = true;
-
   reverseTextFlag = true;
 
   ngOnInit(): void {
@@ -28,9 +27,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  addItem(todo: ITodo): void {
-    console.log(this.searchTodoByDate);
-
+  addTodo(todo: ITodo): void {
     this.todos.unshift(todo);
 
     localStorage.clear();
@@ -76,8 +73,10 @@ export class AppComponent implements OnInit {
 
   reset(): void {
     this.todos = this.todos.sort((a, b) => b.id - a.id);
+
     this.reverseDateFlag = true;
     this.reverseTextFlag = true;
+
     this.searchTodoByDate = '';
     this.searchTodoByText = '';
   }

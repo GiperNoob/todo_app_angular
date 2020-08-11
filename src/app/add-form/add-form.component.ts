@@ -33,8 +33,6 @@ export class AddFormComponent implements OnInit {
       ? this.localStorageTodos[0].id + 1
       : 1;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.inputRef.nativeElement.focus();
 
@@ -43,6 +41,7 @@ export class AddFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(1),
       ]),
+
       dateTodo: new FormControl(null, Validators.required),
     });
   }
