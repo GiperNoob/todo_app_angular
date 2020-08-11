@@ -4,25 +4,44 @@
       <h1>Todo Application</h1>
     </header>
 
-    <section class="search-form">
-      <app-add-form (onAdd)="addItem($event)"></app-add-form>
+    <app-add-form (onAdd)="addItem($event)"></app-add-form>
 
-      <div>
+    <section class="search-form">
+      <div class="filter-field">
+        <span>Filter by Text: </span>
+
         <input
           class="search-field"
           type="text"
-          [(ngModel)]="searchTodo"
+          [(ngModel)]="searchTodoByText"
           placeholder="search ToDo"
         />
+
+        <span>Filter by Date: </span>
+        <input class="search-date" type="date" [(ngModel)]="searchTodoByDate" />
+      </div>
+
+      <div class="sort-field">
+        <button class="btn sort-text" type="button" (click)="sortByText()">
+          Sort by Alphabet
+        </button>
+
+        <button class="btn sort-data" type="button" (click)="sortByDate()">
+          Sort by Date
+        </button>
+
+        <button class="btn reset" type="button" (click)="reset()">Reset</button>
       </div>
     </section>
 
-    <ul>
-      <app-todo-list
-        *ngFor="let todo of todos | filter: searchTodo"
-        [todo]="todo"
-        (onRemove)="removeTodo($event)"
-      ></app-todo-list>
-    </ul>
+    <section class="todo-list">
+      <ul>
+        <app-todo-list
+          *ngFor="let todo of todos | filter: searchTodoByText:searchTodoByDate"
+          [todo]="todo"
+          (onRemove)="removeTodo($event)"
+        ></app-todo-list>
+      </ul>
+    </section>
   </div>
 </div>

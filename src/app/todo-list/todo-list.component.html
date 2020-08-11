@@ -6,17 +6,20 @@
 >
   <span class="span-text">{{ todo.text }}</span>
 
-  <span class="span-data">{{ todo.data }}</span>
+  <span class="span-date">{{ todo.date }}</span>
 
   <div class="btn-container">
     <button
       class="btn btn-complete"
+      type="button"
       (click)="flagComplete = !flagComplete"
       (click)="todoComplete()"
     >
       {{ buttonText }}
     </button>
 
-    <button class="btn btn-delete" (click)="removeTodo()">Delete</button>
+    <button class="btn btn-delete" type="button" (click)="removeTodo()">
+      Delete
+    </button>
   </div>
 </li>

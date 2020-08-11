@@ -21,12 +21,7 @@ li {
   box-sizing: border-box;
 }
 
-.btn-complete {
-  margin: 0px 5px;
-}
-
-.btn-complete,
-.btn-delete {
+.btn {
   border: 1px solid black;
   padding: 5px 10px 5px 10px;
   text-align: center;
@@ -34,6 +29,10 @@ li {
   border-radius: 4px;
   font-size: 15px;
   font-weight: 500;
+}
+
+.btn-complete {
+  margin: 0px 5px;
 }
 
 .btn-delete {
@@ -44,13 +43,14 @@ li {
   margin-right: 10px;
   display: inline-block;
   width: 305px;
-  overflow: hidden;
-  max-height: 80px;
+  max-height: 75px;
+  overflow-x: auto;
+  word-break: break-word;
   text-align: start;
   font-size: 20px;
 }
 
 .span-text,
-.span-data {
+.span-date {
   color: #ffffff;
 }
