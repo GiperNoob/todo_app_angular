@@ -1,0 +1,56 @@
+.complete {
+  border: 2px solid red;
+  border-radius: 4px;
+}
+
+.notComplete {
+  border: 2px solid green;
+  border-radius: 4px;
+  text-decoration: line-through;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 800px;
+  min-width: 600px;
+  box-sizing: border-box;
+}
+
+.btn {
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  width: 115px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn-complete {
+  margin: 0px 5px;
+}
+
+.btn-delete {
+  width: 70px;
+}
+
+.span-text {
+  margin-right: 10px;
+  display: inline-block;
+  width: 305px;
+  max-height: 75px;
+  overflow-x: auto;
+  word-break: break-word;
+  text-align: start;
+  font-size: 20px;
+}
+
+.span-text,
+.span-date {
+  color: #ffffff;
+}

@@ -1,0 +1,46 @@
+.form-container {
+  margin-bottom: 15px;
+}
+
+.input-text {
+  width: 200px;
+  &.ng-invalid.ng-touched {
+    border: 3px solid red;
+  }
+  &.ng-valid.ng-touched {
+    border: 3px solid green;
+  }
+}
+
+.input-date {
+  &.ng-invalid.ng-touched {
+    border: 3px solid red;
+  }
+  &.ng-valid.ng-touched {
+    border: 3px solid green;
+  }
+}
+
+.input-text,
+.input-date {
+  padding: 10px 0px 10px 10px;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid yellowgreen;
+  text-align: center;
+  font-size: 18px;
+
+  &:hover {
+    box-shadow: 1px 1px 8px rgba(248, 246, 246);
+  }
+
+  &:active {
+    box-shadow: 4px 2px 8px rgba(228, 221, 221, 0.7);
+  }
+}

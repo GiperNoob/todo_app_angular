@@ -1,0 +1,14 @@
+<form class="form-container" [formGroup]="form">
+  <input
+    class="input-text"
+    type="text"
+    placeholder="what need to do?"
+    [(ngModel)]="text"
+    #titleInput
+    formControlName="textTodo"
+  />
+
+  <input class="input-date" type="date" formControlName="dateTodo" />
+
+  <button class="btn" type="button" (click)="addTodo()">Add ToDo</button>
+</form>
