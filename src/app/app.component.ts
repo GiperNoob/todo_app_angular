@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   addTodo(todo: ITodo): void {
-    this.todos.unshift(todo);
+    this.todos.push(todo);
 
     localStorage.clear();
     localStorage.setItem('savedToDos', JSON.stringify(this.todos));

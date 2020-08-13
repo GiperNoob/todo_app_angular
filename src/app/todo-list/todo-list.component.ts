@@ -22,8 +22,7 @@ export class TodoListComponent {
   }
 
   todoComplete(): void {
-    this.flagComplete
-      ? (this.buttonText = 'Not complete')
-      : (this.buttonText = 'Complete');
+    this.flagComplete = !this.flagComplete;
+    this.buttonText = this.flagComplete ? 'Not complete' : 'Complete';
   }
 }

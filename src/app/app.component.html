@@ -37,7 +37,10 @@
     <section class="todo-list">
       <ul>
         <app-todo-list
-          *ngFor="let todo of todos | filter: searchTodoByText:searchTodoByDate"
+          *ngFor="
+            let todo of todos.reverse()
+              | filter: searchTodoByText:searchTodoByDate
+          "
           [todo]="todo"
           (onRemove)="removeTodo($event)"
         ></app-todo-list>

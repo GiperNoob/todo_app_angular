@@ -34,8 +34,6 @@ export class AddFormComponent implements OnInit {
       : 1;
 
   ngOnInit(): void {
-    this.inputRef.nativeElement.focus();
-
     this.form = new FormGroup({
       textTodo: new FormControl(null, [
         Validators.required,
@@ -47,21 +45,15 @@ export class AddFormComponent implements OnInit {
   }
 
   addTodo(): void {
-    const dateInputsValue = { ...this.form.value };
-
     if (this.form.valid) {
       const post: ITodo = {
-        text: dateInputsValue.textTodo,
-
-        date: dateInputsValue.dateTodo,
-
+        text: this.form.value.textTodo,
+        date: this.form.value.dateTodo,
         id: this.id++,
       };
 
       this.onAdd.emit(post);
-
       this.text = '';
-
       this.inputRef.nativeElement.focus();
     }
   }
