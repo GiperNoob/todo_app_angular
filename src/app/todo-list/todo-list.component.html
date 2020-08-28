@@ -9,12 +9,7 @@
   <span class="span-date">{{ todo.date }}</span>
 
   <div class="btn-container">
-    <button
-      class="btn btn-complete"
-      type="button"
-      (click)="flagComplete = !flagComplete"
-      (click)="todoComplete()"
-    >
+    <button class="btn btn-complete" type="button" (click)="todoComplete()">
       {{ buttonText }}
     </button>
 
